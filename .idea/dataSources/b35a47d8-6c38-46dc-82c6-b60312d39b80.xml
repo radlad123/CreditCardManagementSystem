@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="cdw_sapp@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="cdw_sapp">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="banking_db"/>
+    <schema id="4" parent="1" name="bank_db"/>
+    <schema id="5" parent="1" name="college_db"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="log_db"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="sample_db"/>
+    <schema id="11" parent="1" name="stud_db"/>
+    <schema id="12" parent="1" name="sys"/>
+    <schema id="13" parent="1" name="test_db"/>
+    <table id="14" parent="2" name="CDW_SAPP_BRANCH"/>
+    <table id="15" parent="2" name="CDW_SAPP_CREDITCARD"/>
+    <table id="16" parent="2" name="CDW_SAPP_CUSTOMER"/>
+    <column id="17" parent="14" name="BRANCH_CODE">
+      <Position>1</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="14" name="BRANCH_NAME">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <column id="19" parent="14" name="BRANCH_STREET">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="20" parent="14" name="BRANCH_CITY">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="14" name="BRANCH_STATE">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="22" parent="14" name="BRANCH_ZIP">
+      <Position>6</Position>
+      <DataType>int(7)|0</DataType>
+    </column>
+    <column id="23" parent="14" name="BRANCH_PHONE">
+      <Position>7</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <key id="24" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>BRANCH_CODE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="15" name="TRANSACTION_ID">
+      <Position>1</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="15" name="DAY">
+      <Position>2</Position>
+      <DataType>int(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="15" name="MONTH">
+      <Position>3</Position>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <column id="28" parent="15" name="YEAR">
+      <Position>4</Position>
+      <DataType>int(4)|0</DataType>
+    </column>
+    <column id="29" parent="15" name="CREDIT_CARD_NO">
+      <Position>5</Position>
+      <DataType>varchar(16)|0</DataType>
+    </column>
+    <column id="30" parent="15" name="CUST_SSN">
+      <Position>6</Position>
+      <DataType>int(9)|0</DataType>
+    </column>
+    <column id="31" parent="15" name="BRANCH_CODE">
+      <Position>7</Position>
+      <DataType>int(9)|0</DataType>
+    </column>
+    <column id="32" parent="15" name="TRANSACTION_TYPE">
+      <Position>8</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="33" parent="15" name="TRANSACTION_VALUE">
+      <Position>9</Position>
+      <DataType>decimal(20,3)|0</DataType>
+    </column>
+    <index id="34" parent="15" name="FK_CARDBRANCH">
+      <ColNames>BRANCH_CODE</ColNames>
+    </index>
+    <index id="35" parent="15" name="FK_CARDCUST">
+      <ColNames>CREDIT_CARD_NO
+CUST_SSN</ColNames>
+    </index>
+    <key id="36" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TRANSACTION_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="15" name="FK_CARDCUST">
+      <ColNames>CREDIT_CARD_NO
+CUST_SSN</ColNames>
+      <RefSchemaName>cdw_sapp</RefSchemaName>
+      <RefTableName>CDW_SAPP_CUSTOMER</RefTableName>
+      <RefColNames>CREDIT_CARD_NO
+SSN</RefColNames>
+    </foreign-key>
+    <foreign-key id="38" parent="15" name="FK_CARDBRANCH">
+      <ColNames>BRANCH_CODE</ColNames>
+      <RefSchemaName>cdw_sapp</RefSchemaName>
+      <RefTableName>CDW_SAPP_BRANCH</RefTableName>
+      <RefColNames>BRANCH_CODE</RefColNames>
+    </foreign-key>
+    <column id="39" parent="16" name="FIRST_NAME">
+      <Position>1</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="16" name="MIDDLE_NAME">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="41" parent="16" name="LAST_NAME">
+      <Position>3</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="42" parent="16" name="SSN">
+      <Position>4</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="16" name="CREDIT_CARD_NO">
+      <Position>5</Position>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="44" parent="16" name="APT_NO">
+      <Position>6</Position>
+      <DataType>varchar(7)|0</DataType>
+    </column>
+    <column id="45" parent="16" name="STREET_NAME">
+      <Position>7</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="46" parent="16" name="CUST_CITY">
+      <Position>8</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="16" name="CUST_STATE">
+      <Position>9</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="48" parent="16" name="CUST_COUNTRY">
+      <Position>10</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="49" parent="16" name="CUST_ZIP">
+      <Position>11</Position>
+      <DataType>varchar(7)|0</DataType>
+    </column>
+    <column id="50" parent="16" name="CUST_PHONE">
+      <Position>12</Position>
+      <DataType>int(10)|0</DataType>
+    </column>
+    <column id="51" parent="16" name="CUST_EMAIL">
+      <Position>13</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <key id="52" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CREDIT_CARD_NO
+SSN</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
