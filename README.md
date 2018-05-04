@@ -74,10 +74,10 @@ Sqoop commands/jobs are located in `HadoopFiles/sqoop_jobs/`.
 
 
 
-- [ ] HDFS
-- [ ] Hive
-- [ ] Sqoop
-- [ ] Oozie
+- [X] HDFS
+- [X] Hive
+- [X] Sqoop
+- [X] Oozie
 
 
 
